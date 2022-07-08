@@ -1,7 +1,12 @@
 package com.tutorial.crudmongoback.CRUD.dto;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
 public class ProductDto {
+    @NotBlank(message = "product name is mandatory")
     private String name;
+    @Min(value = 1, message = "product price is mandatory")
     private int price;
 
     public ProductDto() {
